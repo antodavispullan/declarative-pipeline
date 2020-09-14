@@ -8,6 +8,12 @@ pipeline{
         stage('compile'){
             steps{
                 sh 'echo Hello World'
+                exit 1
+            }
+        }
+        stage('Test'){
+            steps{
+                sh 'echo Testing...'               
             }
         }
     }
@@ -18,5 +24,14 @@ pipeline{
          changed{
              sh 'echo  build changed'
          }
+         fixed{
+             sh 'echo  build fixed'
+         }
+         failure{
+             sh 'echo  build failed'
+         }        
+         success{
+             sh 'echo  build success'
+         } 
     }
 }
