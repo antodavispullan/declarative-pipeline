@@ -1,5 +1,5 @@
 pipeline{
-    agent:any
+    agent any
     triggers{
         cron("* * * * *")
     }
@@ -10,7 +10,7 @@ pipeline{
             }
         }
     }
-    post:{
+    post {
          always{
              sh 'echo build completed'
          }
