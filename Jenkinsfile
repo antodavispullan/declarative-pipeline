@@ -1,5 +1,8 @@
 pipeline{
     agent:any
+    trigger{
+        cron("* * * * *")
+    }
     stages{
         stage('compile'){
             steps{
